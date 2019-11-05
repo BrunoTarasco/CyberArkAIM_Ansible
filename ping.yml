@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  
+  tasks:
+  - name: CyberArkAIM
+    set_fact:
+      cyberark_ansible_secret: "{{ item.password }}"
+      cyberark_ansible_user: "{{ item.passprops.username }}"
+    with_cyberarkpassword:
+      appid: "AIMAPI"
+      query: "Safe=Safe;Object=Operating System-UnixSSH-127.0.0.1-root"
+      output: "Password,PassProps.UserName" 
+      
+ 
+ 
+- hosts: TARGET
+  gather_facts: yes
+  vars:
+    ansible_ssh_user: "{{ hostvars['localhost']['cyberark_ansible_user'] }}"
+    ansible_ssh_pass: "{{ hostvars['localhost']['cyberark_ansible_secret'] }}"        
+    ansible_connection: ssh
+ 
+  tasks:
+  - name: PING
+    ping:
