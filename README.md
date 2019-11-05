@@ -38,14 +38,14 @@ Edit /etc/ansible/hosts file
 $ sudo vim /etc/ansible/hosts
 ```
 
-Add the hosts you want to manage using ansible by adding this to your file
+Add the hosts you want to manage using Ansible by adding this to your file
 ```
 [hosts_group_name]
 server1_ip
 server2_ip
 ```
 
-#### Step 4 - Prepare CyberArk AIM
+### Step 4 - Prepare CyberArk AIM
 - Use WinSCP to copy the AIM folder file to your Ansible server
 
 - Install redhat-lsb
