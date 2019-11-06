@@ -10,7 +10,7 @@
       appid: "AIMAPI"
       query: "Safe=Safe;Object=Operating System-UnixSSH-127.0.0.1-root"
       output: "Password,PassProps.UserName" 
-      
+    no_log: yes  
  
  
 - hosts: TARGET
