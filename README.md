@@ -67,7 +67,7 @@ $ sudo cp <filename.cred> aimparms.sample Vault.ini /var/tmp
 - Copy aimparms so you can edit it
 ```
 $ sudo cd /var/tmp
-$ sudo cp aimparms.sample airmparms
+$ sudo cp aimparms.sample aimparms
 ```
 
 - Edit aimparms
